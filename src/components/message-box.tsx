@@ -1,6 +1,7 @@
 import React from "react";
 import { IMessage } from "../lib/types";
 import clsx from "clsx";
+import Markdown from "react-markdown";
 
 interface MessageBoxProps {
   ref: React.RefObject<HTMLDivElement | null>;
@@ -24,7 +25,7 @@ export default function MessageBox({
             "bg-blue-500 text-white ml-auto": msg.sender === "user",
             "bg-gray-300 text-gray-800": msg.sender !== "user",
           })}>
-          <p>{msg.text}</p>
+          <Markdown>{msg.text}</Markdown>
         </div>
       ))}
     </div>
