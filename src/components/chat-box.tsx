@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { useChatbot } from "../hooks/useChatbot";
-import useChatScroll from "../hooks/useChatScroll";
+import { useScroll } from "../hooks/useScroll";
 import MessageBox from "./message-box";
 import InputBox from "./input-box";
 import ButtonSend from "./button-send";
@@ -13,7 +13,7 @@ interface ChatBoxProps {
 
 export const ChatBox = ({ title, icon }: ChatBoxProps) => {
   const { messages, sendMessage, isLoading } = useChatbot();
-  const ref = useChatScroll(messages);
+  const ref = useScroll(messages);
 
   const [input, setInput] = useState("");
 
